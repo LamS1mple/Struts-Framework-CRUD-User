@@ -1,0 +1,4 @@
+com\mkyong\common\DAO\ConnectDB.class
+com\mkyong\common\action\UserAction.class
+com\mkyong\common\DAO\UserDAO.class
+com\mkyong\common\form\UserForm.class

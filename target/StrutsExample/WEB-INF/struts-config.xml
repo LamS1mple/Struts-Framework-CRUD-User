@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+ 
+<struts-config>
+ 
+	<form-beans>
+		<!--<form-bean
+			name="userForm"
+			type="com.mkyong.common.form.UserForm"/>
+ 
+		-->
+		<form-bean name="dynaUserForm"   
+		      type="org.apache.struts.action.DynaActionForm">
+		      <form-property name="username" type="java.lang.String"/>
+		</form-bean>
+
+	</form-beans>
+ 
+	<action-mappings>
+ 
+	    <action
+			path="/aa"
+			type="org.apache.struts.actions.ForwardAction"
+			parameter="/pages/login.jsp"/>
+ 
+		<action
+			path="/"
+			type="com.mkyong.common.action.UserAction"
+			parameter="getAllUser"
+			name="dynaUserForm"
+			>	
+ 
+			<forward name="success" path="/pages/welcome.jsp"/>
+			<forward name="failed" path="/pages/login.jsp"/>
+			
+		</action>
+	</action-mappings>
+ 
+	<message-resources
+		parameter="com.mkyong.common.properties.Common" />
+ 
+</struts-config>
